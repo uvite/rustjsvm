@@ -1,0 +1,26 @@
+[package]
+name = "rustvm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+nom = "7.1.1"
+thiserror = "1.0"
+rhai = "1.11.0"
+rhai-fs = "0.1.2"
+binance = { git = "https://github.com/wisespace-io/binance-rs.git" }
+tide-rhai = { path = "./tide" }
+#async-std = { version = "1.6.5", features = ["unstable"] }
+async-std = {version = "1.9.0", features = ["attributes"]}
+
+tokio = { version = "1.13.0", features = ["full"] }
+
+
+tide = "0.16.0"
+serde = { version = "1.0", features = ["derive"] }
+[[bin]]
+name = "rustvm"
+path = "src/main.rs"
